@@ -1,0 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pannellum Panorama</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+</head>
+<body>
+
+    <div id="panorama"></div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "https://static.vecteezy.com/system/resources/previews/017/167/742/non_2x/full-hdri-360-panorama-near-infant-incubator-box-in-maternity-ward-of-medical-center-hospital-with-modern-equipment-in-dentistry-clinic-in-equirectangular-projection-free-photo.jpg"
+        });
+    </script>
+    
+</body>
+</html>

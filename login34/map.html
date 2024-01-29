@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Search</title>
+    <style>
+        .button {
+            background-image: linear-gradient(to right, #b6b8b5, #edefec, #b6b8b5);
+            border-radius: 10px;
+            font-size: 18px;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 10px;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://www.holidify.com/images/bgImages/COIMBATORE.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-image1 {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/32/Chennai_Central.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-image2 {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://cdn.britannica.com/35/142635-050-8828F21A/Parkland-building-High-Court-Vidhana-Soudha-Karnataka.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card-description {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), #1aa2a4);">
+    <h1 style="background-image: linear-gradient(to right, #b6b8b5, #edefec, #b6b8b5);">
+        <center>Search for a Place on Google Maps</center>
+    </h1>
+    <br><br><br><br>
+    <center>
+        <button class="button">
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Enter a place"></button><br>
+                <button class="button" type="submit">Search</button>
+        </form>
+    </center>
+
+    <div class="card-container">
+        <a href="facilitiesfilter.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <center><div class="card-title">COIMBATORE</div></center>
+                </div>
+            </div>
+        </a>
+
+        <a href="next-page.html">
+            <div class="card">
+                <div class="card-image1"></div>
+                <div class="card-content">
+                    <center><div class="card-title">CHENNAI</div></center>
+                </div>
+            </div>
+        </a>
+
+        <a href="next-page.html">
+            <div class="card">
+                <div class="card-image2"></div>
+                <div class="card-content">
+                    <center><div class="card-title">BENGALURU</div></center>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchQuery = document.getElementById("searchInput").value;
+            const encodedSearchQuery = encodeURIComponent(searchQuery);
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedSearchQuery}`;
+            window.location.href = googleMapsUrl;
+        });
+    </script>
+</body>
+</html>

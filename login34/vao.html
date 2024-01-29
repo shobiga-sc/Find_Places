@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding: 0px;
+            font-family: poppins;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green ;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .address {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .facilities {
+            list-style: none;
+            padding-left: 0;
+        }
+        .facilities li {
+            margin-bottom: 5px;
+        }
+        .reviews {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .review {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .review h3 {
+            margin: 0;
+        }
+        .rating {
+            color: rgba(245, 206, 15, 0.848);
+        }
+        .add-review {
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #555;
+        }
+        #testimonals{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .testimonal-heading{
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;    
+        }
+        .testimonal-heading h1{
+            font-size: 2.2 rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffff;
+            padding: 10px 20px;
+        }
+        .testimonal-heading span{
+            font-size: 1.3rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .testimonal-box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .testimonal-box{
+            width: 500px;
+            box-shadow: 2px 2px 30px black;
+            background-color: #ffff;
+            padding:20px ;
+            margin: 15px;
+            cursor: pointer;
+        }
+        .profile-img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .profile-img img{
+           width:100% ;
+           height: 100%;
+           object-fit: cover;
+           object-position: center; 
+        }
+        .profile{
+            display: flex;
+            align-items:center ;
+        }
+        .name-user{
+            display: flex;
+            flex-direction: column;    
+        }
+        .name-user strong{
+            color:#3d3d3d;
+            font-size: 1.1 rem;
+            letter-spacing: 0.5px;
+        }
+        .name-user span{
+            color: #979797;
+            font-size: 0.8rem;
+
+        }
+        .reviews{
+            color: #f9d71c;
+        }
+        .box-top{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .client-comment p{
+           font-size: 1.0 rem;
+           color: #4b4b4b;
+        }
+        .testimonal-box:hover{
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+    </style>
+</head>
+<body style="background-color: #8850abe8;">
+    <header>
+        <h1>Tahsildar taluk office</h1>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="address">
+                <h2 style="color: rgb(137, 139, 169);">Address</h2>
+                <p> 2X2C+MFX, Huzur Rd, Opp. Court, Gopalapuram, Coimbatore, Tamil Nadu 641018</p>
+                <h2 style="color:rgb(137, 139, 169); ;">Facilities</h2>
+                <ul class="facilities">
+                    <li>A variety of certificates, such as caste certificates, Income Certificates, residential proof certificates, etc., are being issued at the Tahsildar office based on the recommendations from the VAOs (Village Administration Officers) and the revenue Inspectors.</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h2 style="color: rgb(137, 139, 169);">Reviews</h2>
+                <div class="review">
+                    <h3 style="color: #202020;">Reegan</h3>
+                    <p style="color: #202020;">Mostly worked day&night shifts to complete given task,and have done at right time with good work, little bit health issues but successfully completed.</p>
+                    </p>
+                    <div class="rating">
+                        Rating: 3.6 stars
+                    </div>
+                    <h1 style="color:#202020">LOCATION</h1>
+                    <a href="https://goo.gl/maps/nfVNAdcmiFof8LQE9">navigate you</a>
+                </div>
+            </div>
+        </div>
+        <div class="add-review">
+            <h2 style="color: rgb(137, 139, 169);">Add Your Review</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="4" cols="50"></textarea>
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+                <input type="submit" value="Submit Review">
+            </form>
+        </div>
+    </div>
+    <section id="testimonals">
+   <div class=""testimonal-heading>
+    <h2><span><center>COMMENTS</center></span></h2>
+    <h1>Top Reviews</h1>
+   </div>
+   <div class="testimonal-box-container">
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+   </div>
+</section>
+</body>
+</html>

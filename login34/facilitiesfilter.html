@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+     body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+  padding: 20px 10px;
+}
+
+.header a {
+  float: center;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    background-image: linear-gradient(to right,rgba(0,0,0,0.6),#1aa2a4);
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+
+  .filter {
+    width: 45%;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 20px;
+  }
+
+  .location-card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 30px black;
+    border-radius: 25px;
+    padding: 10px;
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .location-card:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .location-card:hover {
+    background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+  }
+  .checked {
+  color: orange;
+}
+
+
+.button {   background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+        border-radius: 10px;
+           font-size: 18px;/* Green */  border: none;
+             color: black;  padding: 15px 32px; 
+              text-align: center;  text-decoration: none;  
+              display: inline-block;  margin: 4px 2px;  cursor: pointer;}
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <center><h1 class="logo">FACILITIES FILTER</h1></center>
+    
+  </div><br>
+<center><button class="button" ><h1><center>COIMBATORE</center></h1></button>
+<div class="filters">
+  <div class="filter">
+    <label for="primary-filter">Select a category:</label>
+    <select id="primary-filter">
+      <option value="all">All</option>
+      <option value="restaurant">Restaurant</option>
+      <option value="hospital">Hospital</option>
+      <option value="public-place">Public Place</option>
+      <option value="entertainment">Entertainment</option>
+    </select>
+  </div>
+
+  <div class="filter">
+    <label>Accessibility options:</label>
+    <div>
+      <input type="checkbox" id="wheelchair" value="wheelchair">
+      <label for="wheelchair">Wheelchair</label>
+      <input type="checkbox" id="elevator" value="elevator">
+      <label for="elevator">Elevator</label>
+      <input type="checkbox" id="restroom" value="restroom">
+      <label for="restroom">Restroom</label>
+      <input type="checkbox" id="parking" value="parking">
+      <label for="parking">Parking</label>
+    </div>
+  </div>
+</div>
+
+<div class="card-grid">
+  <div class="location-card" data-category="restaurant" data-accessibility="wheelchair parking restroom">
+    <center><h3>DINDIGUL THALAPAKATTI RESTAURANT</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="thalapakatti.jpg" height="200" width="300"></center>
+<center><a href="dindifaci.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center>
+  </div>
+
+     <div class="location-card" data-category="hospital" data-accessibility="elevator restroom wheelchair parking">
+    <center><h3>GANGA HOSPITAL</h3></center>
+     <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="ganga.jpg" height="200" width="300"></center>
+<center><a href="ganga.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="gangapan.html">CLICK HERE FOR A VIEW</a></center>
+  </div>
+
+  <div class="location-card" data-category="entertainment" data-accessibility="parking elevator wheelchair restroom">
+    <center><h3>BROOK FIELDS</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="brooks.jpg" height="200" width="300"></center>
+<center><a href="brooksfield.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="brookpan.html">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="public-place" data-accessibility="parking restroom wheelchair">
+    <center><h3>COLLECTOR OFFICE</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="collector.jpg" height="200" width="300"></center>
+<center><a href="collector.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="collectorpan.html">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="entertainment" data-accessibility="parking restroom wheelchair">
+    <center><h3>VOC PARK</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="voc.jpg" height="200" width="300"></center>
+<center><a href="voc.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="public-place" data-accessibility="parking restroom wheelchair">
+    <center><h3>TAHSILDAR OFFICE</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="taluk.jpg" height="200" width="300"></center>
+<center><a href="vao.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="hospital" data-accessibility="parking restroom wheelchair elevator">
+    <center><h3>KMCH HOSPITAL</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="kmch.jpg" height="200" width="300"></center>
+<center><a href="kmch.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="restaurant" data-accessibility="parking restroom wheelchair">
+    <center><h3>AB's</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="abs.jpg" height="200" width="300"></center>
+<center><a href="AB.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+
+  <div class="location-card" data-category="public-place" data-accessibility="parking restroom">
+    <center><h3>RTO OFFICE</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="rto.jpg" height="200" width="300"></center>
+<center><a href="rto.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+  
+  <div class="location-card" data-category="restaurant" data-accessibility="parking restroom">
+    <center><h3>SRI VELAN CHETTINADU MESS</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="seri velan.jpg" height="200" width="300"></center>
+<center><a href="srivelan.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="hospital" data-accessibility="parking restroom wheelchair elevator">
+    <center><h3>PSG HOSPITALS</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="psg.jpg" height="200" width="300"></center>
+<center><a href="psg.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+
+  <div class="location-card" data-category="entertainment" data-accessibility="parking restroom">
+    <center><h3>RACE COURSE</h3></center>
+    <center><h2>Star Rating</h2>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span></center>
+<center><img src="race.jpg" height="200" width="300"></center>
+<center><a href="racecourse.html">POST YOUR REVIEWS HERE</a></center>
+<center><a href="#">CLICK HERE FOR A VIEW</a></center> 
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const primaryFilter = document.getElementById('primary-filter');
+    const accessibilityCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    const locationCards = document.querySelectorAll('.location-card');
+
+    // Add change event listeners to filters
+    primaryFilter.addEventListener('change', filterLocations);
+    accessibilityCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterLocations));
+
+    function filterLocations() {
+      const selectedCategory = primaryFilter.value;
+      const selectedAccessibility = Array.from(accessibilityCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+
+      locationCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const accessibility = card.getAttribute('data-accessibility').split(' ');
+
+        // Show/hide cards based on filter selections
+        const categoryMatch = selectedCategory === 'all' || category === selectedCategory;
+        const accessibilityMatch = selectedAccessibility.every(option => accessibility.includes(option));
+
+        if (categoryMatch && accessibilityMatch) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

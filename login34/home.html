@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+           
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to right,rgba(0,0,0,0.6),#1aa2a4);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+
+        }
+        
+        
+        #testimonals{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .testimonal-heading{
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;    
+        }
+        .testimonal-heading h1{
+            font-size: 2.2 rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffff;
+            padding: 10px 20px;
+        }
+        .testimonal-heading span{
+            font-size: 1.3rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .testimonal-box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .testimonal-box{
+            width: 500px;
+            box-shadow: 2px 2px 30px black;
+            background-color: #ffff;
+            padding:20px ;
+            margin: 15px;
+            cursor: pointer;
+        }
+        
+        .profile{
+            display: flex;
+            align-items:center ;
+        }
+        .testimonal-box:hover{
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+        
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding: 10px 10%;
+}
+/*-----------------------------services------------------*/
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+}
+/*----------portfolio---------*/
+#portfolio{
+    padding: 50px 0;
+ 
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(250px,1fr));
+    grid-gap: 75px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 95%;
+    border-radius: 20px;
+    display:flex;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 80%;
+    height: 0%;
+    background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    padding: 0 50px;
+    text-align: left;
+    font-size: 20px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #11c4c7;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 24px;
+    height: 22px;
+    border-radius: 90%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 80%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #11c4c7;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color:#fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+    
+}
+.container2
+    {
+    width: 95%;
+    height: auto;
+    padding: 10px;
+    margin: 80px auto;
+    display: flex ;
+    justify-content: center;
+    }
+    .box
+    {
+    width: 380px;
+    height: 500px;
+    background:  rgb(43, 40, 140);
+    margin: 0px 10px;
+    transition: 1s;
+    }
+    .box:hover
+    {
+    transform: scale(1.1);
+    background:  rgb(61, 47, 182);
+    box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+    }
+    .box-img img
+    {height: 110px;
+    width: 110px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    transform: translate(-50%,-50%);
+    position: relative;
+    margin-top: 30%;
+    margin-left: 50%;
+    }
+    .box-text
+    {
+    padding: 10px;
+    margin: 5px;
+    }
+    .box-text h2
+    {
+    font-size: 20px;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    color:black;
+    }
+    .box-text p
+    {
+    line-height: 22px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    color:black;
+    }
+    .box-text a
+    {
+    background: rgb(219, 170, 178);
+    color: #000;
+    padding: 7px 15px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    margin-top: 10% ;
+    margin-left: 35% ;
+    }
+    .box-text a:hover
+    {
+    background-color:rgb(238, 117, 137);
+    color: whitesmoke;
+    font :bold;
+    }
+    .button {   background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5);
+        border-radius: 10px;
+           font-size: 18px;/* Green */  border: none;
+             color: black;  padding: 15px 32px; 
+              text-align: center;  text-decoration: none;  
+              display: inline-block;  margin: 4px 2px;  cursor: pointer;}
+
+    </style>
+
+
+</head>
+    <body >
+        <h1 style="background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5) ;"><center>FIND PLACES</center></h1>
+        
+   <h1 style="background-image: linear-gradient(to right,#b6b8b5,#edefec,#b6b8b5) ;"><center>ABOUT</center></h1>
+        
+    
+<h1><center>NAVIGATE THE NEARBY PLACES</center></h1>
+<div id="portfolio">
+  <div class="container">
+      <h1 class="sub1"><center>FEATURES OF WEBSITE</center></h1>
+      <div class="work-list">
+          <div class="work">
+              <img src="review.jpg " height="300" width="300">
+              <div class="layer">
+                  <h2>POST YOUR RATING AND REVIEWS</h2>
+                  <a href="#"><i class="fa-solid fa-forward"></i></a>
+              </div>
+          </div>
+          <div class="work">
+              <img src="find.jpg"  height="300" width="300">
+              <div class="layer">
+                  <h2>FIND THE PLACES AND LOCATION</h2>
+                  <a href="#"><i class="fa-solid fa-forward"></i></a>
+              </div>
+          </div>
+          <div class="work">
+              <img src="filter.gif" height="300" width="300">
+              <div class="layer">
+              <h2>FILTERING THE FACILITIES</h2>
+              <a href="#"><i class="fa-solid fa-forward"></i></a>
+              </div>
+          </div>
+          
+            
+    
+</body>
+</head>
+</html>

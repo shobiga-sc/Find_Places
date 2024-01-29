@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="servicesstyle.css">
+        <script src="https://kit.fontawesome.com/29bea68c51.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin:0px;
+            padding: 0px;
+            font-family: poppins;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(210, 221, 92) ;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .address {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .facilities {
+            list-style: none;
+            padding-left: 0;
+        }
+        .facilities li {
+            margin-bottom: 5px;
+        }
+        .reviews {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .review {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .review h3 {
+            margin: 0;
+        }
+        .rating {
+            color: rgba(245, 206, 15, 0.848);
+        }
+        .add-review {
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #555;
+        }
+        #testimonals{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .testimonal-heading{
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;    
+        }
+        .testimonal-heading h1{
+            font-size: 2.2 rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #ffff;
+            padding: 10px 20px;
+        }
+        .testimonal-heading span{
+            font-size: 1.3rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .testimonal-box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .testimonal-box{
+            width: 500px;
+            box-shadow: 2px 2px 30px black;
+            background-color: #ffff;
+            padding:20px ;
+            margin: 15px;
+            cursor: pointer;
+        }
+        .profile-img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .profile-img img{
+           width:100% ;
+           height: 100%;
+           object-fit: cover;
+           object-position: center; 
+        }
+        .profile{
+            display: flex;
+            align-items:center ;
+        }
+        .name-user{
+            display: flex;
+            flex-direction: column;    
+        }
+        .name-user strong{
+            color:#3d3d3d;
+            font-size: 1.1 rem;
+            letter-spacing: 0.5px;
+        }
+        .name-user span{
+            color: #979797;
+            font-size: 0.8rem;
+
+        }
+        .reviews{
+            color: #f9d71c;
+        }
+        .box-top{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .client-comment p{
+           font-size: 1.0 rem;
+           color: #4b4b4b;
+        }
+        .testimonal-box:hover{
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+    </style>
+</head>
+<body style="background-color: #b2c486e8;">
+    <header>
+        <h1>KOVAI MEDICAL CENTER</h1>
+    </header>
+    <div class="container">
+        <div class="grid">
+            <div class="address">
+                <h2 style="color: rgb(137, 139, 169);">Address</h2>
+                <p > 99, Avinashi Rd, TNHB Colony, Indira Nagar, Civil Aerodrome Post, Nehru Nagar West, Coimbatore, Tamil Nadu 641014</p>
+                <h2 style="color:rgb(137, 139, 169); ;">Facilities</h2>
+                <ul class="facilities">
+                    <li>Heart Institute</li>
+                    <li>Multi Organ Transplant Center</li>
+                    <li>Comprehensive Cancer Center</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h2 style="color: rgb(137, 139, 169);">Reviews</h2>
+                <div class="review">
+                    <h3 style="color: #202020;">Rakesh </h3>
+                    <p style="color: #202020;">Dr Siva Kumar sir not only has the healing touch but also a healing vision .. we are indeed grateful to him.and prayers for his long life so that many can live without pain. He is our Godsent??
+
+                    </p>
+                    <div class="rating">
+                        Rating: 3 stars
+                    </div>
+                    <h1 style="color:#202020">LOCATION</h1>
+                    <a href="https://goo.gl/maps/iwXoiuANferNyrecA">navigate you</a>
+                </div>
+            </div>
+        </div>
+        <div class="add-review">
+            <h2 style="color: rgb(137, 139, 169);">Add Your Review</h2>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+            <textarea name="Review" rows="6" placeholder="Review"></textarea>
+            <label for="Rating">Rating:</label>
+            <input type="text" name="Rating" placeholder="ENTER YOUR Rating(OUT OF 5)" required>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    var tablinks = document.getElementsByClassName("tab-link");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+    for(tablink of tablinks){
+    tablink.classList.remove("active-link");
+     }
+    for(tabcontent of tabcontents){
+    tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+     }
+     
+    </script> 
+               <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxrDLqS8wtDW4yxWEbnYYb4-p5u8zfDTckepdNxdDV3IBiGnU7JWtEleWvwsmjHkugV/exec'
+                const form = document.forms['submit-to-google-sheet']
+                 const msg=document.getElementById("msg")
+                form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response =>{
+                msg.innerHTML="Message sent Successfully"
+                setTimeout(function(){
+                msg.innerHTML= ""
+                },3000)
+                form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+                })
+                 </script>
+        
+    </div>
+    <section id="testimonals">
+   <div class=""testimonal-heading>
+    <h2><span><center>COMMENTS</center></span></h2>
+    <h1>Top Reviews</h1>
+   </div>
+   <div class="testimonal-box-container">
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="testimonal-box">
+        <div class="box-top">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="C:\Users\Kareeshma sk\OneDrive\Desktop\login2\image.jpg"/>
+                </div>
+                <div class="name-user">
+                    <strong>JAI</strong>
+                    <span>@jai123</span>
+                </div>
+                <div class="reviews">
+
+            </div>
+            </div> 
+            <!------comments------>
+            <div class="client-comment">
+                <p>qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
+
+        </div>
+    </div>
+   </div>
+</section>
+</body>
+</html>

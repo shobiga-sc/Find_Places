@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Basic styling for dropdown and image display */
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .filter-container select,
+  .facility-checkboxes {
+    margin-bottom: 10px;
+  }
+
+  .filter-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .facility-checkboxes label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .facility-images {
+    display: flex;
+    gap: 10px;
+  }
+
+  .facility-images img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #f5f8ff;
+      }
+      .wrapper {
+        width: 95%;
+        margin: 0 auto;
+      }
+      #search-container {
+        margin: 1em 0;
+      }
+      #search-container input {
+        background-color: transparent;
+        width: 40%;
+        border-bottom: 2px solid #110f29;
+        padding: 1em 0.3em;
+      }
+      #search-container input:focus {
+        border-bottom-color: green;
+      }
+      #search-container button {
+        padding: 1em 2em;
+        margin-left: 1em;
+        background-color: green;
+        color: #ffffff;
+        border-radius: 5px;
+        margin-top: 0.5em;
+      }
+      .button-value {
+        border: 2px solid green;
+        padding: 1em 2.2em;
+        border-radius: 3em;
+        background-color: transparent;
+        color: green;
+        cursor: pointer;
+      }
+      .active {
+        background-color: green;
+        color: #ffffff;
+      }
+      #products {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 1.5em;
+        padding: 2em 0;
+      }
+      .card {
+        background-color: #ffffff;
+        max-width: 18em;
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+      }
+      .image-container {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        height: 15em;
+      }
+      .container {
+        padding-top: 1em;
+        color: #110f29;
+      }
+      .container h5 {
+        font-weight: 500;
+      }
+      .hide {
+        display: none;
+      }
+      @media screen and (max-width: 720px) {
+        img {
+          max-width: 100%;
+          object-fit: contain;
+          height: 10em;
+        }
+        .card {
+          max-width: 10em;
+          margin-top: 1em;
+        }
+        #products {
+          grid-template-columns: auto auto;
+          grid-column-gap: 1em;
+        }
+      }
+</style>
+<title>Facility Filter</title>
+</head>
+<body>
+    <h1 style="background-color:green;"><center>FILTER THE FACILITIES</center></h1>
+  <div class="filter-container">
+    <select id="locationType">
+      <option value="places">Places</option>
+      <option value="restaurants">Restaurants</option>
+      <option value="offices">Offices</option>
+    </select>
+
+    <div class="facility-checkboxes">
+      <label>
+        <input type="checkbox" class="facility-filter" value="wheelchair"> Wheelchair
+      </label>
+      <label>
+        <input type="checkbox" class="facility-filter" value="hearing"> Hearing Assistance
+      </label>
+      <label>
+        <input type="checkbox" class="facility-filter" value="visual"> Visual Assistance
+      </label>
+      <label>
+        <input type="checkbox" class="facility-filter" value="restroom"> Restroom
+      </label>
+    </div>
+
+    <div class="facility-images"></div>
+  </div>
+
+  <script>
+    const facilityImages = {
+      places: {
+        wheelchair: 'race.jpg',
+        hearing: 'brooks.jpg',
+        visual: 'kmch.jpg',
+        restroom: 'ganga.jpg'
+      },
+      restaurants: {
+        wheelchair: 'abs.jpg',
+        hearing: 'le_meridien.jpg',
+        visual: 'seri velan.jpg',
+        restroom: 'thalapakatti.jpg'
+      },
+      offices: {
+        wheelchair: 'rto.jpg',
+        hearing: 'collector.jpg',
+        visual: 'taluk.jpg',
+        restroom: 'chennai.jpg'
+      }
+    };
+
+    const locationTypeSelect = document.getElementById('locationType');
+    const facilityCheckboxes = document.querySelectorAll('.facility-filter');
+    const facilityImageContainer = document.querySelector('.facility-images');
+
+    locationTypeSelect.addEventListener('change', () => {
+      updateFacilityImages();
+    });
+
+    facilityCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        updateFacilityImages();
+      });
+    });
+
+    function updateFacilityImages() {
+      const selectedLocationType = locationTypeSelect.value;
+      const selectedFacilities = Array.from(facilityCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+
+      displayFilteredFacilityImages(selectedLocationType, selectedFacilities);
+    }
+
+    function displayFilteredFacilityImages(locationType, selectedFacilities) {
+      facilityImageContainer.innerHTML = '';
+
+      selectedFacilities.forEach(facility => {
+        const img = document.createElement('img');
+        img.src = facilityImages[locationType][facility];
+        img.alt = facility;
+        facilityImageContainer.appendChild(img);
+      });
+    }
+
+    // Initial display
+    updateFacilityImages();
+  </script>
+  <body style="background-color: #F0E68C;">
+    <h1 style="background-color:green;"><center>FILTER THE PLACES</center></h1>
+    <div class="wrapper">
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search product name here.."
+        />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('Topwear')">
+          RESTAURANT
+        </button>
+        <button class="button-value" onclick="filterProduct('Bottomwear')">
+          HOSPITALS
+        </button>
+        <button class="button-value" onclick="filterProduct('Jacket')">
+          ENTERTAINMENT
+        </button>
+        <button class="button-value" onclick="filterProduct('Watch')">
+          OFFICES AND BUILDINGS
+        </button>
+      </div>
+      <div id="products"></div>
+    </div>
+    <!-- Script -->
+    <script >
+        let products = {
+  data: [
+    {
+      productName: "DINDUIGUL THALAPAKATTI",
+      category: "Topwear",
+      location:"Gandhipuram",
+      image: "thalapakatti.jpg",
+      
+    },
+    {
+      productName: "KMCH HOSPITALS",
+      category: "Bottomwear",
+      location:"Cross cut road",
+      image: "kmch.jpg",
+    },
+    {
+      productName: "BROOKEFIELDS MALL",
+      category: "Jacket",
+      location:"Cross cut road",
+      image: "brooks.jpg",
+    },
+    {
+      productName: "SRI VELAN CHETTINADU MESS",
+      category: "Topwear",
+      location:"Peelamedu",
+      image: "seri velan.jpg",
+    },
+    {
+      productName: "Le Meridien",
+      category: "jacket",
+      location:"Karumathampatti",
+      image: "le_meridien.jpg",
+    },
+    {
+      productName: "GANGA HOSPITAL",
+      category: "Bottomwear",
+      location:"Saibaba Colony",
+      image: "ganga.jpg",
+    },
+    {
+      productName: "VOC PARK",
+      category: "Jacket",
+      location:"Park gate",
+      image: "voc.jpg",
+    },
+    {
+      productName: "AB's",
+      category: "Topwear",
+      location:"Lakshmi Mills",
+      image: "abs.jpg",
+    },
+    {
+      productName: "TAHSILDAR TALUK OFFICE",
+      category: "Watch",
+      location:"Coimbatore North",
+      image: "taluk.jpg",
+    },
+    {
+      productName: "RTO OFFICE",
+      category: "Watch",
+      location:"Dr.Balasundaram road",
+      image: "rto.jpg",
+    },
+    {
+      productName: "COIMBATORE DISTRICT COLLECTOR OFFICE",
+      category: "Watch",
+      location:"Lakshmi mills",
+      image: "collector.jpg",
+    },
+    {
+      productName: "RACE COURSE",
+      category: "Jacket",
+      location:"Cross cut road",
+      image: "race.jpg",
+    },
+  ],
+};
+for (let i of products.data) {
+  //Create Card
+  let card = document.createElement("div");
+  //Card should have category and should stay hidden initially
+  card.classList.add("card", i.category, "hide");
+  //image div
+  let imgContainer = document.createElement("div");
+  imgContainer.classList.add("image-container");
+  //img tag
+  let image = document.createElement("img");
+  image.setAttribute("src", i.image);
+  imgContainer.appendChild(image);
+  card.appendChild(imgContainer);
+  //container
+  let container = document.createElement("div");
+  container.classList.add("container");
+  //product name
+  let name = document.createElement("h5");
+  name.classList.add("product-name");
+  name.innerText = i.productName.toUpperCase();
+  container.appendChild(name);
+  //location
+  let location = document.createElement("h6");
+  location.innerText = i.location
+  container.appendChild(location);
+  card.appendChild(container);
+  document.getElementById("products").appendChild(card);
+}
+//parameter passed from button (Parameter same as category)
+function filterProduct(value) {
+  //Button class code
+  let buttons = document.querySelectorAll(".button-value");
+  buttons.forEach((button) => {
+    //check if value equals innerText
+    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+  //select all cards
+  let elements = document.querySelectorAll(".card");
+  //loop through all cards
+  elements.forEach((element) => {
+    //display all cards on 'all' button click
+    if (value == "all") {
+      element.classList.remove("hide");
+    } else {
+      //Check if element contains category class
+      if (element.classList.contains(value)) {
+        //display element based on category
+        element.classList.remove("hide");
+      } else {
+        //hide other elements
+        element.classList.add("hide");
+      }
+    }
+  });
+}
+//Search button click
+document.getElementById("search").addEventListener("click", () => {
+  //initializations
+  let searchInput = document.getElementById("search-input").value;
+  let elements = document.querySelectorAll(".product-name");
+  let cards = document.querySelectorAll(".card");
+  //loop through all elements
+  elements.forEach((element, index) => {
+    //check if text includes the search value
+    if (element.innerText.includes(searchInput.toUpperCase())) {
+      //display matching card
+      cards[index].classList.remove("hide");
+    } else {
+      //hide others
+      cards[index].classList.add("hide");
+    }
+  });
+});
+//Initially display all products
+window.onload = () => {
+  filterProduct("all");
+};
+    </script>
+  </body>
+</body>
+</html>
